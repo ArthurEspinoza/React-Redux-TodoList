@@ -1,6 +1,9 @@
 *{
   box-sizing: border-box;
 }
+body{
+  background-color: #1f1f1f;
+}
 .container{
   margin: 5% 0 0 25%;
   padding: 3%;
@@ -10,17 +13,80 @@
 }
 .container h1{
   text-align: center;
+  color: #414141;
 }
 .addContainer input[type="text"]{
   width: 80%;
 }
+.addContainer input[type="text"]:hover,
+.addContainer input[type="text"]:focus{
+  border-color: #414141;
+}
+.addContainer button{
+  border: none;
+  padding: 2px;
+  margin-left: 2%;
+  border-radius: 10px;
+}
 .todosContainer h3{
   text-align: center;
+}
+.todosContainer{
+  margin-top: 3%;
+  margin-bottom: 5%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 5px solid #646464;
+  padding: 3%;
+}
+.todoContainer::after{
+  clear: both;
+  content: "";
+  display: table;
+}
+.col{
+  width: 33%;
+  float: left;
+}
+.col button{
+  border: none;
+  padding: 8px;
+}
+.status{
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
 }
 .visContainer{
   width: 60%;
   margin: 0 0 0 20%;
 }
 .visContainer button{
-  width: 30%;
+  width: 25%;
+  padding: 2% 0 2% 0;
+  margin-left: 10px;
+  border: none;
+  border-radius: 10px;
+}
+.btnIncomplete{
+  background-color: #ff3c3c;
+  color: #FF0000;
+}
+.btnIncomplete:hover{
+  background-color: rgba(255, 60, 60, 0.7);
+}
+.btnComplete{
+  background-color: #3cff4e;
+  color: #005307;
+}
+.btnComplete:hover{
+  background-color: rgba(60, 255, 78, 0.7);
+}
+.btnAll{
+  background-color: #D5D5D5;
+  color: #001685;
+}
+.btnAll:hover{
+  background-color: rgba(213, 213, 213, 0.7);
 }

@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY, GET_TODOS } from './actionTypes'
+import { ADD_TODO, TOGGLE_TODO, SET_FILTER, GET_TODOS } from './actionTypes'
 export const addTodo = (content) => {
     return{
         type: ADD_TODO,
@@ -18,7 +18,7 @@ export const toggleTodo = (id) => {
 }
 export const setFilter = (filter) => {
     return{
-        type: SET_VISIBILITY,
+        type: SET_FILTER,
         payload: filter
     }
 }

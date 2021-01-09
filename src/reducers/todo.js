@@ -7,34 +7,32 @@ const todos = (state=myState, action) => {
         case 'ADD_TODO':
             let _id = 1;
             let todo = {
-                content: action.payload
+                content: action.payload,
+                status: 'Incomplete'
             }
-            // console.log(state.byIds)
-            // console.log(state.allIds)
             if(state.allIds.length === 0){
-                console.log("esta vacio")
+                //console.log("esta vacio")
                 todo._id = _id
             }else{
-                console.log("No esta vacio")
+                //console.log("No esta vacio")
                 _id = state.allIds[state.allIds.length - 1] + 1;
                 todo._id = _id;
             }
-            // console.log(todo)
-            // console.log(_id)
-            state.byIds.push(todo)
-            state.allIds.push(_id)
+            state.byIds = [...state.byIds, todo]
+            state.allIds = [...state.allIds, _id]
             return state;
         case 'GET_TODOS':
             return state;
         case 'TOGGLE_TODO':
-            return state.byIds = state.byIds.map(todo => {
-                if(todo._id === action.payload._id){
-                    todo.status = 'completed'
-                    return todo
-                }else{
+            //console.log(action.payload)
+            state.byIds = state.byIds.map(todo => {
+                if(action.payload === todo._id){
+                    todo.status = 'Completed'
                     return todo
                 }
+                return todo
             })
+            return state
         default:
             return state;
     }
